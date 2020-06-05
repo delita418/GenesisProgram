@@ -451,6 +451,7 @@
 				   answerServiceType.innerHTML = el.value;
 				   serType = el.value;
 				// SETTING SERVICE PRICE AND INSTALLATION PERSENT COST-->   
+					
 					if(serType === "Standard"){
 						servicePrice = 7565;
 						installationCostPer = 10;
@@ -466,52 +467,51 @@
 						installationCostPer = 16;
 						answerServicePrice.innerHTML = servicePrice;
 					}
+					
 					if(resiCageNum === 0){ 
 						return;
 					} else {
-						// UPDATING ANSWER DATA FROM RADIO BUTTON
-						// Selecting the input element and get its value 
+			// UPDATING DYNAMICALY RADIO BUTTON
+			// Selecting the input element and get its value 
 				resiAppart = document.getElementById("resi:appart").value;
 				resiFloor = document.getElementById("resi:floor").value;
 				resiBasement = document.getElementById("resi:basement").value;
 				
 								
-				// Displaying the value
-				// Calculate overall # of Appartements by Floor divided by 6 to obtain the number of Elevator cages required
-				// Number of cage required **** NEED TO ROUND it
+			// Displaying the value
+			// Calculate overall # of Appartements by Floor divided by 6 to obtain the number of Elevator cages required
+			// Number of cage required **** NEED TO ROUND it
 				resiCageNum = (+resiAppart / +resiFloor) / 6;
-				answerCage.innerHTML = resiCageNum;
-				// ELEVATORCOST = PRICE * NUM ELEVATORS
+					answerCage.innerHTML = resiCageNum;
+			// ELEVATORCOST = PRICETYPE * NUM ELEVATORS
 				resiElevatorPrice = (+servicePrice * +resiCageNum);
 				answerServicePricetotal.innerHTML = resiElevatorPrice;
-				// INSTALLATION COST FEES
+			// INSTALLATION COST FEES
 				installationCostFees = (+servicePrice * +resiCageNum) * +installationCostPer / 100;
 				answerInstallationFees.innerHTML = installationCostFees;
-				// TOTAL PRICE
+			// TOTAL PRICE
 				installationTotal = installationCostFees + (+servicePrice * +resiCageNum);
 				answerInstallationCost.innerHTML = installationTotal;		
 					}
 	   		}
    		
 			function getInputValue(){
-				// Selecting the input element and get its value 
+			// Selecting the input element and get its value 
 				resiAppart = document.getElementById("resi:appart").value;
 				resiFloor = document.getElementById("resi:floor").value;
 				resiBasement = document.getElementById("resi:basement").value;
-				
-								
-				// Displaying the value
-				// Calculate overall # of Appartements by Floor divided by 6 to obtain the number of Elevator cages required
-				// Number of cage required **** NEED TO ROUND it
+			// Displaying the value
+			// Calculate overall # of Appartements by Floor divided by 6 to obtain the number of Elevator cages required
+			// Number of cage required **** NEED TO ROUND it
 				resiCageNum = (+resiAppart / +resiFloor) / 6;
 				answerCage.innerHTML = resiCageNum;
-				// ELEVATORCOST = PRICE * NUM ELEVATORS
+			// ELEVATORCOST = PRICETYPE * NUM ELEVATORS
 				resiElevatorPrice = (+servicePrice * +resiCageNum);
 				answerServicePricetotal.innerHTML = resiElevatorPrice;
-				// INSTALLATION COST FEES
+			// INSTALLATION COST FEES
 				installationCostFees = (+servicePrice * +resiCageNum) * +installationCostPer / 100;
 				answerInstallationFees.innerHTML = installationCostFees;
-				// TOTAL PRICE
+			// TOTAL PRICE
 				installationTotal = installationCostFees + (+servicePrice * +resiCageNum);
 				answerInstallationCost.innerHTML = installationTotal;		
 				
